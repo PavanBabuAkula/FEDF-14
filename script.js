@@ -138,3 +138,31 @@ window.onload = () => {
   loadStudents();
   loadAdminJobs();
 };
+
+function showInterviewHistory() {
+    let history = JSON.parse(localStorage.getItem("interviewHistory")) || [];
+
+    let list = document.getElementById("historyList");
+    list.innerHTML = "";
+
+    if (history.length === 0) {
+        list.innerHTML = "<p>No interview history available.</p>";
+    } else {
+        history.forEach(item => {
+            let li = document.createElement("li");
+            li.textContent = `${item.company} — Cleared Rounds: ${item.rounds}`;
+            list.appendChild(li);
+        });
+    }
+
+    document.getElementById("historySection").style.display = "block";
+}
+
+if (!localStorage.getItem("interviewHistory")) {
+    let sample = [
+        { company: "TCS", rounds: 2 },
+        { company: "Infosys", rounds: 1 },
+        { company: "Google", rounds: 3 }
+    ];
+    localStorage.setItem("interviewHistory", JSON.stringify(sample));
+}
