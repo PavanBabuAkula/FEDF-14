@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Campus Placement</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Campus Placement</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="student.html">Student</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="form-box">
+      <fieldset>
+        <legend>Login</legend>
+
+        <input type="text" id="loginUser" placeholder="Username" />
+        <input type="password" id="loginPass" placeholder="Password" />
+
+        <div style="margin-top:1rem; display:flex; gap:0.75rem; justify-content:center;">
+          <button class="btn" onclick="login()">Login</button>
+          <a class="btn secondary" href="register.html" style="display:inline-flex;align-items:center;justify-content:center;">Register</a>
+        </div>
+
+        <p style="margin-top:0.9rem; font-size:0.9rem; color:#e6e6ff; text-align:center;">
+          Forgot password? <a href="#" style="color:var(--primary2); text-decoration:underline;">Reset</a>
+        </p>
+      </fieldset>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Portal - Campus Placement</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Campus Placement</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="admin.html">Dashboard</a>
+      <a href="login.html">Logout</a>
+    </nav>
+  </header>
+
+ <main class="portal-center">
+  <div class="portal-box">
+    <h1>Admin Portal</h1>
+
+    <div class="cards">
+      <section class="card">
+        <h2>Post Job Openings</h2>
+        <p>Create job listings.</p>
+      </section>
+
+      <section class="card">
+        <h2>View Applications</h2>
+        <p>See applied students.</p>
+      </section>
+
+      <section class="card">
+        <h2>Manage Students</h2>
+        <p>Review student profiles.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+
+  <section class="portal-wrapper">
+    <div class="portal-card">
+      <fieldset>
+        <legend>Post a Job</legend>
+        <input id="jobTitle" placeholder="Job Title" />
+        <input id="jobCompany" placeholder="Company Name" />
+        <textarea id="jobDesc" placeholder="Job Description"></textarea>
+        <div style="display:flex; gap:0.75rem; margin-top:0.6rem;">
+          <button class="btn" onclick="addJob()">Add Job</button>
+          <button class="btn secondary" onclick="clearJobs()">Clear Jobs</button>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="portal-card">
+      <fieldset>
+        <legend>Registered Students</legend>
+        <div id="studentList" style="display:flex;flex-direction:column;gap:0.6rem;"></div>
+      </fieldset>
+    </div>
+
+    <div class="portal-card">
+      <fieldset>
+        <legend>Applications Received</legend>
+        <div id="adminAppList" style="display:flex;flex-direction:column;gap:0.6rem;"></div>
+      </fieldset>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

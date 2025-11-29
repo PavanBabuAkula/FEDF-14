@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Portal - Campus Placement</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Campus Placement</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="student.html">Dashboard</a>
+      <a href="login.html">Logout</a>
+    </nav>
+  </header>
+
+  <main class="portal-center">
+  <div class="portal-box">
+    <h1>Student Portal</h1>
+
+    <div class="cards">
+      <section class="card">
+        <h2>Register / Update Profile</h2>
+        <p>Enter personal and academic details.</p>
+      </section>
+
+      <section class="card">
+        <h2>Upload Resume</h2>
+        <p>Submit your latest resume.</p>
+      </section>
+
+      <section class="card">
+        <h2>Apply for Jobs</h2>
+        <p>Browse and apply for openings.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+
+  <section class="portal-wrapper">
+    <div class="portal-card">
+      <fieldset>
+        <legend>Your Profile</legend>
+        <input id="stuName" placeholder="Full Name" />
+        <input id="stuSkills" placeholder="Skills (comma separated)" />
+        <input id="stuResume" placeholder="Resume Link (Google Drive / URL)" />
+        <div style="display:flex; gap:0.75rem; margin-top:0.8rem;">
+          <button class="btn" onclick="saveProfile()">Save Profile</button>
+          <button class="btn secondary" onclick="fillProfileSample()">Sample</button>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="portal-card">
+      <fieldset>
+        <legend>Available Jobs</legend>
+        <div id="jobsList" style="display:flex;flex-direction:column;gap:0.9rem;"></div>
+      </fieldset>
+    </div>
+
+    <div class="portal-card">
+      <fieldset>
+        <legend>Your Applications</legend>
+        <div id="appsList" style="display:flex;flex-direction:column;gap:0.6rem;"></div>
+      </fieldset>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

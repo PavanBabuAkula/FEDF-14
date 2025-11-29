@@ -1,0 +1,255 @@
+/* ----------------------------------------------------
+   GLOBAL RESET & THEME
+---------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0b0f2e, #1c104f, #2a1665);
+  background-size: 350% 350%;
+  animation: bgMove 12s ease infinite;
+  color: #f0f3ff;
+  overflow-x: hidden;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+:root {
+  --primary: #6d5dfc;
+  --primary2: #a57dff;
+  --glass: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.15);
+}
+
+/* ----------------------------------------------------
+   NAVBAR
+---------------------------------------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary2);
+  letter-spacing: 1px;
+}
+
+.navbar a {
+  margin-left: 1.6rem;
+  text-decoration: none;
+  color: #dcdcff;
+  transition: 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--primary2);
+  transform: scale(1.05);
+}
+
+/* ----------------------------------------------------
+   HERO SECTION
+---------------------------------------------------- */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  color: #ffffff;
+}
+
+.hero-text p {
+  margin-top: 1rem;
+  color: #d0cef7;
+  font-size: 1.1rem;
+}
+
+/* ----------------------------------------------------
+   CARD GRID
+---------------------------------------------------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 1.8rem;
+  border-radius: 1.4rem;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.35);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.card p {
+  color: #d5d6f8;
+  margin: 0.8rem 0 1.2rem;
+}
+
+/* ----------------------------------------------------
+   BUTTONS
+---------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.6rem;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+  box-shadow: 0px 5px 12px rgba(109, 93, 252, 0.4);
+}
+
+.btn:hover {
+  background: var(--primary2);
+  transform: translateY(-3px);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid var(--primary);
+}
+
+.btn.secondary:hover {
+  background: var(--primary);
+}
+
+/* ----------------------------------------------------
+   FEATURES
+---------------------------------------------------- */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 2.2rem;
+  padding: 3rem;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature h3 {
+  color: var(--primary2);
+  margin-bottom: 0.4rem;
+}
+
+/* ----------------------------------------------------
+   FORM BOX (LOGIN + REGISTER)
+---------------------------------------------------- */
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+.form-box fieldset {
+  width: 380px;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 1.3rem;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+}
+
+.form-box legend {
+  color: var(--primary2);
+  font-size: 1.3rem;
+  padding: 0 12px;
+}
+
+fieldset input, fieldset textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.7rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+}
+
+/* ----------------------------------------------------
+   STUDENT / ADMIN PORTALS
+---------------------------------------------------- */
+.portal-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+  padding: 2.5rem;
+  justify-items: center;
+}
+
+.portal-card {
+  width: 95%;
+  max-width: 450px;
+}
+
+.portal-card fieldset {
+  padding: 1.7rem 2rem;
+  background: var(--card-bg);
+  border-radius: 1.2rem;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+}
+
+.portal-card legend {
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE
+---------------------------------------------------- */
+@media (max-width: 768px) {
+  .navbar { padding: 1rem 1.5rem; }
+  .hero-text h1 { font-size: 2.2rem; }
+}
+.portal-center {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-box {
+  max-width: 900px;
+  width: 100%;
+}
