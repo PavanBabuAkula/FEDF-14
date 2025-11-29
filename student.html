@@ -16,28 +16,33 @@
   </header>
 
   <main class="portal-center">
-  <div class="portal-box">
-    <h1>Student Portal</h1>
+    <div class="portal-box">
+      <h1>Student Portal</h1>
 
-    <div class="cards">
-      <section class="card">
-        <h2>Register / Update Profile</h2>
-        <p>Enter personal and academic details.</p>
-      </section>
+      <div class="cards">
+        <section class="card">
+          <h2>Register / Update Profile</h2>
+          <p>Enter personal and academic details.</p>
+        </section>
 
-      <section class="card">
-        <h2>Upload Resume</h2>
-        <p>Submit your latest resume.</p>
-      </section>
+        <section class="card">
+          <h2>Upload Resume</h2>
+          <p>Submit your latest resume.</p>
+        </section>
 
-      <section class="card">
-        <h2>Apply for Jobs</h2>
-        <p>Browse and apply for openings.</p>
-      </section>
+        <section class="card">
+          <h2>Apply for Jobs</h2>
+          <p>Browse and apply for openings.</p>
+        </section>
+
+        <!-- ✅ NEW CARD: INTERVIEW HISTORY -->
+        <section class="card" onclick="showInterviewHistory()" style="cursor:pointer;">
+          <h2>Interview History</h2>
+          <p>View companies and rounds cleared.</p>
+        </section>
+      </div>
     </div>
-  </div>
-</main>
-
+  </main>
 
   <section class="portal-wrapper">
     <div class="portal-card">
@@ -66,8 +71,19 @@
         <div id="appsList" style="display:flex;flex-direction:column;gap:0.6rem;"></div>
       </fieldset>
     </div>
+
+    <!-- ✅ NEW PORTAL CARD FOR INTERVIEW HISTORY -->
+    <div class="portal-card" id="interviewHistoryCard" style="display:none;">
+      <fieldset>
+        <legend>Interview History</legend>
+        <div id="interviewHistoryList" style="display:flex;flex-direction:column;gap:0.6rem;">
+          <!-- Filled by script.js -->
+        </div>
+      </fieldset>
+    </div>
   </section>
 
   <script src="script.js"></script>
 </body>
 </html>
+
